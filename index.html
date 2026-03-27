@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> my dear Mili💝</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="wrap">
+        <canvas id="bg-canvas"></canvas>
+        <canvas id="game-canvas"></canvas>
+        <div id="warn-flash"></div>
+        <div id="ui">
+            <div id="hud">
+                <div class="hbox">
+                    <div class="hlbl">Caught</div>
+                    <div class="hval" id="sv">0</div>
+                </div>
+                <div class="hbox">
+                    <div class="hlbl">Time</div>
+                    <div class="hval" id="tv">60</div>
+                </div>
+                <div class="hbox">
+                    <div class="hlbl">Score</div>
+                    <div class="hval" id="ptv">0</div>
+                </div>
+                <div class="hbox">
+                    <div class="hlbl">Miss</div>
+                    <div class="hval" id="mv">0</div>
+                </div>
+                <div id="prog-outer">
+                    <div id="prog-inner"></div>
+                </div>
+            </div>
+            <button id="mute-btn" style="display:none" onclick="toggleMute()">🔊</button>
+            <div id="combo-display"></div>
+            <div id="level-badge">Lv 1</div>
+            <div id="diff-badge"></div>
+            <div id="speed-warn"></div>
+        </div>
+~
+        <div id="start-screen">
+            <div class="card">
+                <div style="font-size:46px;margin-bottom:8px;">💝</div>
+                <h1>Catch My Heart Dear!</h1>
+                <div class="sub">Basket move koro — 30 hearts catch korle<br>Mili tomar jono special surprise! 🎁</div>
+                <div class="rules">
+                    💗 Good hearts → catch koro (points!)<br>
+                    💔 Broken heart → catch korle GAME OVER!<br>
+                    ⭐ Combo → bonus multiplier!<br>
+                    ⚡ Speed barte thakbe — sabdhane!
+                </div>
+                <div
+                    style="font-size:10px;color:rgba(255,182,193,0.45);margin-bottom:7px;letter-spacing:1px;text-transform:uppercase;">
+                    Difficulty choose koro</div>
+                <div class="diff-row">
+                    <button class="diff-btn easy selected" id="btn-easy" onclick="selectDiff('easy')">😊 Easy<br><span
+                            style="font-size:10px;font-weight:400;opacity:0.8">Slow · Forgiving</span></button>
+                    <button class="diff-btn medium" id="btn-medium" onclick="selectDiff('medium')">🔥 Medium<br><span
+                            style="font-size:10px;font-weight:400;opacity:0.8">Faster · Zigzag</span></button>
+                    <button class="diff-btn hard" id="btn-hard" onclick="selectDiff('hard')">💀 Hard<br><span
+                            style="font-size:10px;font-weight:400;opacity:0.8">Chaos · Darkness</span></button>
+                </div>
+                <button class="btn" onclick="startGame()">Khelo! 🎮</button>
+                <br><button id="music-toggle" onclick="toggleMusicPref()">🎵 Music: ON</button>
+            </div>
+        </div>
+
+        <div id="end-screen">
+            <div class="card">
+                <div style="font-size:44px;margin-bottom:5px;">💔</div>
+                <h1>Game Over!</h1>
+                <div style="font-size:32px;font-weight:700;color:#ff6b9d;margin:7px 0;" id="escore"></div>
+                <div style="font-size:24px;margin-bottom:6px;" id="estars"></div>
+                <div style="font-size:12px;color:rgba(255,182,193,0.78);margin-bottom:16px;line-height:1.9;white-space:pre-line;"
+                    id="emsg"></div>
+                <button class="btn" onclick="resetGame()">Aro Ekbar! 🔄</button>
+            </div>
+        </div>
+
+        <div id="special-screen">
+            <div class="card">
+                <div style="font-size:44px;margin-bottom:5px;">💌</div>
+                <h1 style="color:#ffd6e7;">Special Message</h1>
+                <div class="love-letter" id="special-msg"></div>
+                <button class="btn" onclick="resetGame()">Again? 💕</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
